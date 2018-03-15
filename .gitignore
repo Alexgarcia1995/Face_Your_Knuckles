@@ -1,2 +1,14 @@
+Backend/node_modules
+Backend/public/hot
+Backend/public/storage
+Backend/storage/*.key
 Backend/vendor
+Backend/.idea
+Backend/.vagrant
+Backend/Homestead.json
+Backend/Homestead.yaml
+Backend/npm-debug.log
+Backend/yarn-error.log
+Backend/.env
+
 Frontend/node_modules

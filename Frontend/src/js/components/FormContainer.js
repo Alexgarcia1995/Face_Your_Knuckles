@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import $ from 'jquery';
 class FormContainer extends Component {
   constructor() {
     super();
     this.state = {
-      title: "",
+      title: "Titulo aplicacion",
       text: ""
     };
 
@@ -15,12 +16,28 @@ class FormContainer extends Component {
 
   handleChangeInput(event){
       event.preventDefault();
-      console.log(event.target.value)
+      this.setState({
+        text : event.target.value
+      });
+      console.log(this.state)
   }
 
   handleSubmit(event){
     event.preventDefault();
-    console.log(event.target);
+    $.ajax({
+      headers: {
+        contentType: "application/json",
+      },
+      type: 'POST',
+      url: 'http://localhost:8000/api/testing',
+      data:this.state
+    })
+    .done(function(data) {
+      alert("Datos venidos del backend"+JSON.stringify(data));
+    })
+    .fail(function(jqXhr) {
+      console.log(jqXhr);
+    });
   }
 
   render() {

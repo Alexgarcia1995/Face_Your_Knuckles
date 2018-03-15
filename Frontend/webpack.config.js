@@ -1,3 +1,6 @@
+
+var $ = require("jquery");
+
 module.exports = {
   entry: [
     './src/index.js'
