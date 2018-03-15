@@ -1,0 +1,22 @@
+version: '2'
+services:
+
+  frontend:
+    build: ./Frontend
+    container_name: yourappname_frontend
+    command: npm run start
+    ports:
+      - '8080:80'
+    volumes:
+     - ./frontend:/app
+    environment:
+      NODE_ENV: development
+
+  backend:
+    build: ./Backend
+    container_name: yourappname_backend
+    command: php artisan serve
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./backend:/app
