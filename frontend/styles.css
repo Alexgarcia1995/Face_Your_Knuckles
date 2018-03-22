@@ -1,0 +1,83 @@
+
+.main{
+    display: grid;
+}
+
+.dropdown {
+    display: grid;
+    position: relative;
+    height: 4em;
+    background-color: #333;
+}
+
+.dropdown-noticias{
+    background: inherit;
+    grid-row: 1;
+    grid-column: 1;
+    border: 3px green solid;
+    text-align: left;
+    color: white;
+}
+
+.dropdown-videos{
+    background: inherit;
+    grid-row: 1;
+    grid-column: 2;
+    border : 3px green solid;
+    text-align: left;
+    color: white;
+}
+
+.dropdown-blog{
+    background: inherit;
+    grid-row: 1;
+    grid-column: 3;
+    border: 3px green solid;
+    text-align: left;
+    color: white;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-noticias:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-videos-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-videos:hover .dropdown-videos-content {
+    display: block;
+}
+.dropdown-videos-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.formulario{
+    grid-row: 2/4;
+}

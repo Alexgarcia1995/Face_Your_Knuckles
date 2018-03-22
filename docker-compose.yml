@@ -2,7 +2,7 @@ version: '2'
 services:
 
   frontend:
-    build: ./Frontend
+    build: ./frontend
     container_name: yourappname_frontend
     command: npm run start
     ports:
@@ -13,7 +13,7 @@ services:
       NODE_ENV: development
 
   backend:
-    build: ./Backend
+    build: ./backend
     container_name: yourappname_backend
     command: php artisan serve
     ports:
