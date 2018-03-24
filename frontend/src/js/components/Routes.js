@@ -8,8 +8,6 @@ class Routes extends Component {
     super();
   }
 
-
-
   render() {
     return(
       <div>
