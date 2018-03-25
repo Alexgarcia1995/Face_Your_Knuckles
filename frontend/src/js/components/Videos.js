@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import YTSearch from 'youtube-api-search';
-import $ from 'jquery';
-import { Link } from "react-router-dom";
 import VideosListItem from "./VideosListItem";
 
 class Videos extends Component {

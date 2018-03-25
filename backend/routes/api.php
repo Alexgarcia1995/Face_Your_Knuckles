@@ -17,7 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::middleware('auth:api')->post('/customer/ajaxupdate', 'AjaxController@updateCustomerRecord');
-Route::post('/testing', function(Request $request){
-    return response()->json($request) ;
-} );
+Route::get('/noticias/{category}', 'NoticiasController@getnoticias');
