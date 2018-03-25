@@ -7,8 +7,8 @@ import Routes from './js/components/Routes.js';
 const App = () => (
   <Router>
     <div>
-      {<NavigationBar />}
-      {<Routes />}
+      {<NavigationBar noticias={['boxeo','karate','kick-boxing']} videos={['boxeo','karate','kick-boxing']} />}
+      {<Routes noticias={['boxeo','karate','kick-boxing']} videos={['boxeo','karate','kick-boxing']} />}
     </div>
   </Router>
 );

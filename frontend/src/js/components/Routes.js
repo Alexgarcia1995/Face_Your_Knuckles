@@ -5,11 +5,11 @@ import Videos from './Videos.js';
 import VideoDetail from "./VideoDetail";
 
 class Routes extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state={
-      noticias:['boxeo','karate','kick-boxing'],
-      videos:['boxeo','karate','kick-boxing']
+      noticias:props.noticias,
+      videos:props.videos
     }
   }
 
