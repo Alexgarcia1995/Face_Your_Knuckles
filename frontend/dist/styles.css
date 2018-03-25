@@ -81,3 +81,22 @@
 .formulario{
     grid-row: 2/4;
 }
+
+.video-player{
+    text-align: center;
+}
+
+
+.post-container {
+    margin: 20px 20px 0 0;  
+    overflow: auto
+}
+.post-thumb {
+    float: left;
+}
+.post-thumb img {
+    display: block;
+}
+.post-content {
+    margin-left: 10em;
+}

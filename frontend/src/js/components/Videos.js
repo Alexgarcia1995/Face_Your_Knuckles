@@ -10,7 +10,7 @@ class Videos extends Component {
     super();
     this.state={
       videos:[],
-      categoria:window.location.hash.split("#")[1]
+      categoria:window.location.pathname.split("/")[2]
     }
     this.componentWillMount=this.componentWillMount.bind(this);
   }
@@ -18,7 +18,7 @@ class Videos extends Component {
   componentWillMount(){
     YTSearch({
       key: 'AIzaSyCYlDfpI5v3w33npOf5vgBn1CHM4-gGg3w', 
-      term: this.state.categoria,
+      term: this.state.categoria+" training",
       maxResults: '10'}, (videos) => {
         this.setState({
           videos: videos,
@@ -32,12 +32,9 @@ class Videos extends Component {
     })      
     return (
     <div>
-    <div>videos</div>
-    <div>
       <ul>
       {VideosList}
       </ul>
-    </div>
     </div>
     )
   }

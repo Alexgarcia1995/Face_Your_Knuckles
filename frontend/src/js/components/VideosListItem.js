@@ -10,7 +10,8 @@ class VideosListItem extends Component {
     this.state={
       videoId:props.id,
       title:"",
-      description:""
+      description:"",
+      imagesrc:""
     }
     this.componentDidMount=this.componentDidMount.bind(this);
   }
@@ -22,9 +23,11 @@ class VideosListItem extends Component {
       dataType: "jsonp",
       success: function(data){
           let datavideo=data.items[0].snippet
+          console.log(datavideo)
           that.setState({
             title: datavideo.title,
-            description:datavideo.description
+            description:datavideo.description,
+            imagesrc:datavideo.thumbnails.default.url
            });
       },
       error: function(jqXHR, textStatus, errorThrown) {
@@ -37,8 +40,14 @@ class VideosListItem extends Component {
     const link="/video/"+this.state.videoId;
     return( 
       <li>
+      <div className="post-container">
+      <div class="post-thumb"><img src={this.state.imagesrc}></img></div>
+      <div class="post-content">
       <Link to={link}>{this.state.title}</Link>
-      <p>{this.state.description}</p>
+      <p>{this.state.description.split('\n')[0]}</p>
+      <Link to={link}>Read More</Link>
+     </div>
+      </div>
       </li>
     )
   }
