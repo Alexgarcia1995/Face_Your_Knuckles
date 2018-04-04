@@ -37,14 +37,14 @@ class VideoDetail extends Component {
     const opts = {
       height: '390',
       width: '640',
-      playerVars: { // https://developers.google.com/youtube/player_parameters
+      playerVars: {
         autoplay: 0,
         fs:1
       }
     };
  
     return (
-    <div className="video-player" >
+    <div className="video-player">
     <h2>{this.state.title}</h2>
       <YouTube
         videoId={this.state.id}
