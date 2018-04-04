@@ -30,7 +30,8 @@ render() {
   })
 
   return (
-  <div className="dropdown">
+
+<div className="topnav" id="myTopnav">
   <div className="dropdown-noticias"> 
   <span>Noticias</span>
   <div className="dropdown-content">
@@ -43,10 +44,11 @@ render() {
       {videos}
       </div>
   </div>
-  <button className="dropdown-blog"> 
-  <span>Blog</span>
-  </button>
-  </div> 
+  <div className="blog"> 
+  <Link to="/blog">Blog</Link>
+  </div>
+
+</div>
   );
 }
 }
