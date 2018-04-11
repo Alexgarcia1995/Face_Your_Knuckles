@@ -16,15 +16,13 @@ class NoticiasListItem extends Component {
   render() {
     const link="/noticia/"+this.state.idNoticia;
     return( 
-      <li>
-      <div className="post-container">
+      <article className="post-container">
       <div className="post-content">
       <Link to={link}>{this.state.title}</Link>
       <p>{this.state.description.split('\n')[0]}</p>
       <Link to={link}>Read More</Link>
      </div>
-      </div>
-      </li>
+      </article>
     )
   }
 

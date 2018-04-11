@@ -30,9 +30,7 @@ class Videos extends Component {
     })      
     return (
     <div>
-      <ul>
       {VideosList}
-      </ul>
     </div>
     )
   }

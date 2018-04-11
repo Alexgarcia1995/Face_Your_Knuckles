@@ -37,9 +37,7 @@ class Noticias extends Component {
     })      
     return (
     <div>
-      <ul>
       {NoticiasList}
-      </ul>
     </div>
     )
   }

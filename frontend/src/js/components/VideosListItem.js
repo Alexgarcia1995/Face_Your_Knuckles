@@ -39,16 +39,14 @@ class VideosListItem extends Component {
   render() {
     const link="/video/"+this.state.videoId;
     return( 
-      <li>
-      <div className="post-container">
+      <article className="post-container">
       <div class="post-thumb"><img src={this.state.imagesrc}></img></div>
       <div class="post-content">
       <Link to={link}>{this.state.title}</Link>
       <p>{this.state.description.split('\n')[0]}</p>
       <Link to={link}>Read More</Link>
-     </div>
       </div>
-      </li>
+      </article>
     )
   }
 

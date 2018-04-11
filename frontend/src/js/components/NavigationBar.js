@@ -47,7 +47,9 @@ render() {
   <div className="blog"> 
   <Link to="/blog">Blog</Link>
   </div>
-
+  <div className="login"> 
+  <Link to="/login">Login</Link>
+  </div>
 </div>
   );
 }
