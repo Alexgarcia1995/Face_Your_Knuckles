@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Noticias from './Noticias.js';
 import Videos from './Videos.js';
-import VideoDetail from "./VideoDetail";
-import Noticia from "./Noticia";
+import VideoDetail from "./VideoDetail.js";
+import Noticia from "./Noticia.js";
+import Login from "./Login.js";
 
 class Routes extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Routes extends Component {
       {videos}
       <Route path="/video/:id" component={VideoDetail} />
       <Route path="/noticia/:id" component={Noticia} />
+      <Route path="/login" component={Login} />
       </div>
     )
   }
