@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import SocialButton from './SocialButton.js';
 import cookie from 'react-cookies';
+import { Redirect } from "react-router-dom";
 
 class SocialFormLogin extends Component {
     constructor() {
@@ -14,7 +15,7 @@ class SocialFormLogin extends Component {
 
     handleSocialLogin = (user) => {
         cookie.save('userData',user._profile,{ path: '/' })
-        console.log(cookie.load('userData'));
+        window.history.back();
     }
        
     handleSocialLoginFailure = (err) => {

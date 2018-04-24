@@ -1,18 +1,55 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import ReactDOM, { render } from "react-dom";
 import $ from 'jquery';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import cookie from 'react-cookies';
 
 class NavigationBar extends Component {
   constructor(props) {
     super(props);
     this.state={
       noticias:props.noticias,
-      videos:props.videos
+      videos:props.videos,
+      login:false,
+    }
+  }
+
+  componentWillMount(){
+    if(cookie.load('userData')){
+      this.setState({
+        login:true
+      })
+    }
+    else{
+      this.setState({
+        login:false
+      })
     }
   }
   
 render() {
+  const LoginButtons=()=>{
+    if(this.state.login){
+      return(
+        <div>
+        <div className="login"> 
+        <Link to="/logout">Logout</Link>
+        </div>
+        <div className="login"> 
+        <Link to="/profile">Profile</Link>
+        </div>
+        </div>
+      )
+    }
+    else{
+      return (
+        <div className="login"> 
+        <Link to="/login">Login</Link>
+        </div>
+        )
+    }
+  }
+
   const noticias = this.state.noticias.map((categoria)=>{
     let url="/noticias/"+categoria
     let label=categoria.charAt(0).toUpperCase() + categoria.slice(1);
@@ -30,7 +67,6 @@ render() {
   })
 
   return (
-
 <div className="topnav" id="myTopnav">
   <div className="dropdown-noticias"> 
   <span>Noticias</span>
@@ -47,9 +83,7 @@ render() {
   <div className="blog"> 
   <Link to="/blog">Blog</Link>
   </div>
-  <div className="login"> 
-  <Link to="/login">Login</Link>
-  </div>
+  <LoginButtons />
 </div>
   );
 }

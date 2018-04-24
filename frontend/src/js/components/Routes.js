@@ -6,6 +6,7 @@ import VideoDetail from "./VideoDetail.js";
 import Noticia from "./Noticia.js";
 import Login from "./Login.js";
 import Register from "./Register.js";
+import Profile from "./Profile";
 
 class Routes extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class Routes extends Component {
       <Route path="/noticia/:id" component={Noticia} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
+      <Route path="/profile" component={Profile} />
       </div>
     )
   }
