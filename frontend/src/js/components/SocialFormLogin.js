@@ -23,7 +23,6 @@ class SocialFormLogin extends Component {
     render() { 
         return (
     <div>
-    <div>
         <SocialButton
             provider='facebook'
             appId='354968214973716'
@@ -32,8 +31,6 @@ class SocialFormLogin extends Component {
         >
         Login with Facebook
         </SocialButton>
-        </div>
-        <div>
         <SocialButton
             provider='google'
             appId='131438642316-qri8411di14umtj0odvs45me655no7h6.apps.googleusercontent.com'
@@ -41,7 +38,6 @@ class SocialFormLogin extends Component {
             onLoginFailure={this.handleSocialLoginFailure}>
         Login with Google
         </SocialButton>
-        </div>
     </div>
         );
         }
