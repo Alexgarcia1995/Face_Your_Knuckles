@@ -14,8 +14,8 @@ class SocialFormLogin extends Component {
     }  
 
     handleSocialLogin = (user) => {
+        console.log(user._profile);
         cookie.save('userData',user._profile,{ path: '/' })
-        window.history.back();
     }
        
     handleSocialLoginFailure = (err) => {

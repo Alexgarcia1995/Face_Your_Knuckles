@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import SocialFormLogin from "./SocialFormLogin.js";
+import axios from 'axios';
+import cookie from 'react-cookies';
 
 class Login extends Component {
     constructor() {
@@ -13,7 +15,19 @@ class Login extends Component {
 
   submitForm(event){
       event.preventDefault();
-      console.log(event.target);
+      let email=event.target[0].value;
+      let password=event.target[1].value;
+      axios.post("http://localhost:8000/api/login",{
+        email,
+        password,
+      })
+      .then(response=> {
+        console.log(response);
+        cookie.save('userData',response.data.success,{ path: '/' });
+      })
+      .catch(error=> {
+          console.log(error);
+      });
   }
 
 

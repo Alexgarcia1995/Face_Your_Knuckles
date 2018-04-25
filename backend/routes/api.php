@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/noticias/{category}', 'NoticiasController@getnoticias');
 
 Route::get('/noticia/{id}', 'NoticiasController@getnoticia');
+
+Route::post('login', 'API\UserController@login');
+
+Route::post('register', 'API\UserController@register');
