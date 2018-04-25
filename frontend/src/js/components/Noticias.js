@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import $ from 'jquery';
 import NoticiasListItem from './NoticiasListItem';
+import axios from 'axios'
 
 class Noticias extends Component {
   constructor() {
@@ -18,17 +18,13 @@ class Noticias extends Component {
       categoria="Boxeo"
     }
 
-   $.ajax({
-     url:"http://localhost:8000/api/noticias/"+categoria,
-     success: function(data){
-       that.setState({
-         noticias:data
-       })
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      alert (textStatus, + ' | ' + errorThrown);
-    }
-   })
+    axios.get("http://localhost:8000/api/noticias/"+categoria).then(function(response){
+      that.setState({
+        noticias:response.data
+      })
+    }).catch( function(e) {
+      console.log(e);
+    })
   }
 
   render() {

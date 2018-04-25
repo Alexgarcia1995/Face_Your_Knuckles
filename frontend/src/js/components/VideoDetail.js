@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import YouTube from 'react-youtube';
-import $ from 'jquery';
-
+import axios from 'axios';
 
 class VideoDetail extends Component {
   constructor() {
@@ -17,20 +16,15 @@ class VideoDetail extends Component {
 
   componentDidMount(){
     let that=this;
-    $.ajax({
-      url: "https://www.googleapis.com/youtube/v3/videos?id=" + this.state.id + "&key="+ 'AIzaSyCYlDfpI5v3w33npOf5vgBn1CHM4-gGg3w' + "&part=snippet", 
-      dataType: "jsonp",
-      success: function(data){
-          let datavideo=data.items[0].snippet
+    axios.get("https://www.googleapis.com/youtube/v3/videos?id=" + this.state.id + "&key="+ 'AIzaSyCYlDfpI5v3w33npOf5vgBn1CHM4-gGg3w' + "&part=snippet").then(function(response){
+      let datavideo=response.data.items[0].snippet
           that.setState({
             title: datavideo.title,
             description:datavideo.description
            });
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-          alert (textStatus, + ' | ' + errorThrown);
-      }
-  });
+    }).catch( function(e) {
+      console.log(e);
+    })
 }
 
   render() {

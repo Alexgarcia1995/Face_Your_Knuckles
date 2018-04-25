@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import YouTube from 'react-youtube';
-import $ from 'jquery';
+import axios from 'axios'
 
 class Noticia extends Component {
     constructor() {
@@ -16,17 +16,13 @@ class Noticia extends Component {
 
     componentDidMount(){
         let that=this;
-        $.ajax({
-            url:"http://localhost:8000/api/noticia/"+this.state.id,
-            success: function(data){
-                that.setState({
-                    title: data[0].title,
-                    description:data[0].description
-                   });
-           },
-           error: function(jqXHR, textStatus, errorThrown) {
-             alert (textStatus, + ' | ' + errorThrown);
-           }
+        axios.get("http://localhost:8000/api/noticia/"+this.state.id).then(function(response){
+            that.setState({
+                title: response.data[0].title,
+                description:response.data[0].description
+            })
+          }).catch( function(e) {
+            console.log(e);
           })
     }
     

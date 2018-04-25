@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import YTSearch from 'youtube-api-search';
-import $ from 'jquery';
+import axios from 'axios';
 import { Link } from "react-router-dom";
 
 class VideosListItem extends Component {
@@ -18,22 +18,16 @@ class VideosListItem extends Component {
 
   componentDidMount(){
     let that=this;
-    $.ajax({
-      url: "https://www.googleapis.com/youtube/v3/videos?id=" + this.state.videoId + "&key="+ 'AIzaSyCYlDfpI5v3w33npOf5vgBn1CHM4-gGg3w' + "&part=snippet", 
-      dataType: "jsonp",
-      success: function(data){
-          let datavideo=data.items[0].snippet
-          console.log(datavideo)
+    axios.get("https://www.googleapis.com/youtube/v3/videos?id=" + this.state.videoId + "&key="+ 'AIzaSyCYlDfpI5v3w33npOf5vgBn1CHM4-gGg3w' + "&part=snippet").then(function(response){
+      let datavideo=response.data.items[0].snippet
           that.setState({
             title: datavideo.title,
             description:datavideo.description,
             imagesrc:datavideo.thumbnails.default.url
            });
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-          alert (textStatus, + ' | ' + errorThrown);
-      }
-  });
+    }).catch( function(e) {
+        console.log(e);
+    })
   }
 
   render() {

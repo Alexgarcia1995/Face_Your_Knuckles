@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import SocialFormLogin from "./SocialFormLogin.js";
+import $ from 'jquery';
 
 class Register extends Component {
     constructor() {
@@ -12,7 +13,19 @@ class Register extends Component {
 
     submitForm(event){
         event.preventDefault();
-        console.log(event);
+        let name=event.target[0].value;
+        let email=event.target[1].value;
+        let password=event.target[2].value;
+        $.ajax({     
+            url:"http://localhost:8000/api/register",
+            data:[name,email,password],
+            success: function(data){
+                console.log(data);
+             },
+             error: function(jqXHR, textStatus, errorThrown) {
+               alert (textStatus, + ' | ' + errorThrown);
+             }
+            })
     }
 
     render() { 
