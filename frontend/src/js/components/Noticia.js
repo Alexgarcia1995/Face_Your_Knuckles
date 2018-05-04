@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import YouTube from 'react-youtube';
 import axios from 'axios'
 
 class Noticia extends Component {

@@ -6,7 +6,9 @@ import VideoDetail from "./VideoDetail.js";
 import Noticia from "./Noticia.js";
 import Login from "./Login.js";
 import Register from "./Register.js";
-import Profile from "./Profile";
+import Profile from "./Profile.js";
+import BlogPage from "./BlogPage.js";
+import NewBlogEntry from "./NewBlogEntry.js";
 
 class Routes extends Component {
   constructor(props) {
@@ -39,9 +41,12 @@ class Routes extends Component {
       {videos}
       <Route path="/video/:id" component={VideoDetail} />
       <Route path="/noticia/:id" component={Noticia} />
-      <Route path="/login" component={Login} />
-      <Route path="/register" component={Register} />
-      <Route path="/profile" component={Profile} />
+      <Route path="/login/" component={Login} />
+      <Route path="/register/" component={Register} />
+      <Route path="/profile/" component={Profile} />
+      <Route path="/blogs/" component={BlogPage} />
+      <Route path="/newentry/" component={NewBlogEntry} />
+      <Route path="/entry/:id" component={VideoDetail} />
       </div>
     )
   }

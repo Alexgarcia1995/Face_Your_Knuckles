@@ -81,7 +81,7 @@ render() {
       </div>
   </div>
   <div className="blog"> 
-  <Link to="/blog">Blog</Link>
+  <Link to="/blogs">Blog</Link>
   </div>
   <LoginButtons />
 </div>

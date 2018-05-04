@@ -24,3 +24,5 @@ Route::get('/noticia/{id}', 'NoticiasController@getnoticia');
 Route::post('login', 'API\UserController@login');
 
 Route::post('register', 'API\UserController@register');
+
+Route::post('newblog', 'BlogController@store');

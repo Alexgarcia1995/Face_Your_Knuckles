@@ -88,13 +88,12 @@ class UserController extends Controller
         $input['password'] = bcrypt($input['password']);
 
         $user = User::create($input);
-
         $success['token'] =  $user->createToken('MyApp')->accessToken;
-
+        return $success;
         $success['name'] =  $user->name;
         $success['email'] =  $user->email;
 
-        return response()->json(['success'=>$success], $this->successStatus);
+        //return response()->json(['success'=>$success], $this->successStatus);
 
     }
 
