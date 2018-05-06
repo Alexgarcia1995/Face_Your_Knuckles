@@ -27,13 +27,19 @@ class NavigationBar extends Component {
     }
   }
   
+  logout(event){
+    event.preventDefault();
+    cookie.remove('userData');
+    window.location.replace('/');
+  }
+
 render() {
   const LoginButtons=()=>{
     if(this.state.login){
       return(
         <div>
         <div className="login"> 
-        <Link to="/logout">Logout</Link>
+        <a onClick={this.logout}>Logout</a>
         </div>
         <div className="login"> 
         <Link to="/profile">Profile</Link>

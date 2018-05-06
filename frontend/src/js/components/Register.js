@@ -24,6 +24,7 @@ class Register extends Component {
           })
           .then(response=> {
             console.log(response);
+            window.location.replace('/');
           })
           .catch(error=> {
               console.log(error);

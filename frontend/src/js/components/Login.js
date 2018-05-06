@@ -24,6 +24,7 @@ class Login extends Component {
       .then(response=> {
         console.log(response);
         cookie.save('userData',response.data.success,{ path: '/' });
+        window.location.replace('/');
       })
       .catch(error=> {
           console.log(error);

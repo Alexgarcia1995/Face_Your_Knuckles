@@ -11,7 +11,7 @@ class Noticias extends Component {
       categoria:window.location.pathname.split("/")[2]
     };
   }
-  componentWillMount(){
+  componentDidMount(){
     let that=this;
     let categoria=this.state.categoria;
     if (categoria==undefined){
