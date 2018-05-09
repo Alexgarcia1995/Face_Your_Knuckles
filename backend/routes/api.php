@@ -26,3 +26,5 @@ Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 
 Route::post('newblog', 'BlogController@store');
+
+Route::get('blogs', 'BlogController@show');

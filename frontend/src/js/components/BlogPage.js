@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import axios from 'axios';
 import cookie from 'react-cookies';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import BlogEntry from'./BlogEntry';
 
 class BlogPage extends Component {
     constructor() {
@@ -20,6 +21,13 @@ class BlogPage extends Component {
                 user:userData
               })
         }
+        axios.get('http://localhost:8000/api/blogs').then((res)=>{
+            this.setState({
+                blogs:res.data
+            });
+        }).catch((err)=>{
+            console.log(err);
+        })
     }
 
     
@@ -38,11 +46,16 @@ class BlogPage extends Component {
                 )
             }
         }
+
+        const Entries=this.state.blogs.map((entry)=>{
+            return <BlogEntry key={entry.id} id={entry.id} title={entry.title} description={entry.description} />
+          });
         return (
         <div className="video-player">
         <h1>BlogPage</h1>
         <p>Pagina Del Blog</p>
         <Newentrybutton />
+        {Entries}
         </div>
         );
         }

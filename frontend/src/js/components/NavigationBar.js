@@ -37,8 +37,8 @@ render() {
   const LoginButtons=()=>{
     if(this.state.login){
       return(
-        <div>
-        <div className="login"> 
+        <div className="buttonscontainer">
+        <div className="logout"> 
         <a onClick={this.logout}>Logout</a>
         </div>
         <div className="login"> 

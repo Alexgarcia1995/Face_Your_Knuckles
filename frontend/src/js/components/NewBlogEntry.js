@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from 'axios';
+import cookie from 'react-cookies';
 
 class BlogPage extends Component {
     constructor() {
       super();
       this.state = {
+          userid:cookie.load('userData').id
       };
       this.submitForm=this.submitForm.bind(this);
     }
@@ -21,7 +23,7 @@ class BlogPage extends Component {
           category
         })
         .then(response=> {
-          console.log(response);
+          window.location.replace('/blogs')
         })
         .catch(error=> {
             console.log(error);

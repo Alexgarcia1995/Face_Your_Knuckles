@@ -153,4 +153,14 @@
     text-align: center;
   }
 
+  .logout{
+    float: right;
+    background: red;
+    border: 3px solid red;
+  }
+
+  .buttonscontainer{
+      padding: 0px !important;
+  }
+
 
