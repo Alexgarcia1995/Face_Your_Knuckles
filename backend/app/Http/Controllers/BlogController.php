@@ -30,6 +30,7 @@ class BlogController extends Controller
         $blog->title = $input['title'];
         $blog->description= $input['description'];
         $blog->category=$input['category'];
+        $blog->user_id=$input['user_id'];
         $blog->save();
         return $blog;
     }
@@ -77,5 +78,9 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         //
+    }
+
+    public function get_entry($id){
+        return Blog::where('id',$id)->get();
     }
 }

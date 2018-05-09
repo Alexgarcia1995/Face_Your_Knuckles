@@ -35,7 +35,13 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $comment_entry = new Comments;
+        $comment_entry->entry_id = $input['entry_id'];
+        $comment_entry->user_id = $input['user_id'];
+        $comment_entry->comment = $input['comment'];
+        $comment_entry->save();
+        return $comment_entry;
     }
 
     /**

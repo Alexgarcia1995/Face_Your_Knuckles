@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Noticias from './Noticias.js';
-import Videos from './Videos.js';
-import VideoDetail from "./VideoDetail.js";
-import Noticia from "./Noticia.js";
-import Login from "./Login.js";
-import Register from "./Register.js";
-import Profile from "./Profile.js";
-import BlogPage from "./BlogPage.js";
-import NewBlogEntry from "./NewBlogEntry.js";
+import Noticias from './Noticias';
+import Videos from './Videos';
+import VideoDetail from "./VideoDetail";
+import Noticia from "./Noticia";
+import Login from "./Login";
+import Register from "./Register";
+import Profile from "./Profile";
+import BlogPage from "./BlogPage";
+import NewBlogEntry from "./NewBlogEntry";
+import EntryDetail from './EntryDetail';
 
 class Routes extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class Routes extends Component {
       <Route path="/profile/" component={Profile} />
       <Route path="/blogs/" component={BlogPage} />
       <Route path="/newentry/" component={NewBlogEntry} />
-      <Route path="/entry/:id" component={VideoDetail} />
+      <Route path="/entry/:id" component={EntryDetail} />
       </div>
     )
   }

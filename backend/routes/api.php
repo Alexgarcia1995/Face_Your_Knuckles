@@ -27,4 +27,8 @@ Route::post('register', 'API\UserController@register');
 
 Route::post('newblog', 'BlogController@store');
 
+Route::post('newcomment', 'CommentsController@store');
+
 Route::get('blogs', 'BlogController@show');
+
+Route::get('/entry/{id}', 'BlogController@get_entry');

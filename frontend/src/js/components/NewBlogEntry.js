@@ -17,10 +17,12 @@ class BlogPage extends Component {
         let title=event.target[0].value;
         let description=event.target[1].value;
         let category=event.target[2].value;
+        let user_id=this.state.userid;
         axios.post("http://localhost:8000/api/newblog",{
           title,
           description,
-          category
+          category,
+          user_id
         })
         .then(response=> {
           window.location.replace('/blogs')
