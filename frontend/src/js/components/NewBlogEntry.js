@@ -18,7 +18,7 @@ class BlogPage extends Component {
         let description=event.target[1].value;
         let category=event.target[2].value;
         let user_id=this.state.userid;
-        axios.post("http://54.37.8.167:8000/api/newblog",{
+        axios.post("http://localhost:8000/api/newblog",{
           title,
           description,
           category,

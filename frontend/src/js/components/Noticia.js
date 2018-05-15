@@ -15,7 +15,7 @@ class Noticia extends Component {
 
     componentDidMount(){
         let that=this;
-        axios.get("http://54.37.8.167:8000/api/noticia/"+this.state.id).then(function(response){
+        axios.get("http://localhost:8000/api/noticia/"+this.state.id).then(function(response){
             that.setState({
                 title: response.data[0].title,
                 description:response.data[0].description

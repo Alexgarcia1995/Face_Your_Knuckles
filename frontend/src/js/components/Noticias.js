@@ -18,7 +18,7 @@ class Noticias extends Component {
       categoria="Boxeo"
     }
 
-    axios.get("http://54.37.8.167:8000/api/noticias/"+categoria).then(function(response){
+    axios.get("http://localhost:8000/api/noticias/"+categoria).then(function(response){
       that.setState({
         noticias:response.data
       })

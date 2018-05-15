@@ -12,3 +12,5 @@ backend/yarn-error.log
 backend/.env
 
 frontend/node_modules
+
+.vscode/

@@ -17,7 +17,7 @@ class Login extends Component {
       event.preventDefault();
       let email=event.target[0].value;
       let password=event.target[1].value;
-      axios.post("http://54.37.8.167:8000/api/login",{
+      axios.post("http://localhost:8000/api/login",{
         email,
         password,
       })
