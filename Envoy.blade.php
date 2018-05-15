@@ -7,6 +7,7 @@ $branch = 'deploy';
 
 @task('git', ['on' => 'web'])
     cd {{ $path }}
+    git checkout {{ $branch }}
     git stash
     git fetch origin
     git rebase origin/{{ $branch }}
