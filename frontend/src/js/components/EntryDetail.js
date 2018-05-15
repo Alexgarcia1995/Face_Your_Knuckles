@@ -21,7 +21,7 @@ class EntryDetail extends Component {
         let comment=event.target[0].value;
         let entry_id=this.state.entryid;
         let user_id=this.state.userid;
-        axios.post("http://localhost:8000/api/newcomment",{
+        axios.post("http://54.37.8.167:8000/api/newcomment",{
         comment,
         entry_id,
         user_id
@@ -43,7 +43,7 @@ class EntryDetail extends Component {
               })
         }
         let that=this;
-        axios.get("http://localhost:8000/api/entry/"+this.state.entryid).then(function(response){
+        axios.get("http://54.37.8.167:8000/api/entry/"+this.state.entryid).then(function(response){
             that.setState({
                 title: response.data[0].title,
                 description:response.data[0].description

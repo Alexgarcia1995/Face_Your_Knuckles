@@ -17,7 +17,7 @@ class Register extends Component {
         let email=event.target[1].value;
         let password=event.target[2].value;
 
-        axios.post("http://localhost:8000/api/register",{
+        axios.post("http://54.37.8.167:8000/api/register",{
             name,
             email,
             password,

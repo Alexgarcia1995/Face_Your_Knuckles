@@ -21,7 +21,7 @@ class BlogPage extends Component {
                 user:userData
               })
         }
-        axios.get('http://localhost:8000/api/blogs').then((res)=>{
+        axios.get('http://54.37.8.167:8000/api/blogs').then((res)=>{
             this.setState({
                 blogs:res.data
             });
