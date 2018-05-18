@@ -88,4 +88,8 @@ class CommentsController extends Controller
     {
         //
     }
+
+    public function get_entry_comments($id){
+        return Comments::where('entry_id',$id)->get();
+    }
 }

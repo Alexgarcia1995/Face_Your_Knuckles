@@ -25,6 +25,8 @@ Route::post('login', 'API\UserController@login');
 
 Route::post('register', 'API\UserController@register');
 
+Route::get('/user/{id}', 'API\UserController@get_user');
+
 Route::post('newblog', 'BlogController@store');
 
 Route::post('newcomment', 'CommentsController@store');
@@ -32,3 +34,5 @@ Route::post('newcomment', 'CommentsController@store');
 Route::get('blogs', 'BlogController@show');
 
 Route::get('/entry/{id}', 'BlogController@get_entry');
+
+Route::get('/comments/{id}', 'CommentsController@get_entry_comments');

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from 'axios'
 import cookie from 'react-cookies';
+import Comment from './Comment';
 
 class EntryDetail extends Component {
     constructor() {
@@ -10,7 +11,8 @@ class EntryDetail extends Component {
         entryid: window.location.pathname.split("/")[2],
         userid:"",
         title:"",
-        description:""
+        description:"",
+        comments:[]
       };
       this.componentDidMount=this.componentDidMount.bind(this);
       this.sendComment=this.sendComment.bind(this);
@@ -28,7 +30,7 @@ class EntryDetail extends Component {
         })
         .then(response=> {
             console.log(response)
-          //window.location.replace('/blogs')
+            window.location.replace('/blogs/entry/'+this.state.entryid);
         })
         .catch(error=> {
             console.log(error);
@@ -51,6 +53,14 @@ class EntryDetail extends Component {
           }).catch( function(e) {
             console.log(e);
           })
+
+          axios.get("http://localhost:8000/api/comments/"+this.state.entryid).then(function(response){
+          that.setState({
+                comments: response.data,
+            })
+          }).catch( function(e) {
+            console.log(e);
+          });
     }
     
     render() { 
@@ -71,10 +81,15 @@ class EntryDetail extends Component {
                 )
             }
         }
+
+        const comments=this.state.comments.map((entry_comment)=>{
+            return <Comment key={entry_comment.id} comment={entry_comment.comment} user_id={entry_comment.user_id}/>
+        })
         return (
         <div className="video-player">
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
+        {comments}
         <CommentForm />
         </div>
         );
