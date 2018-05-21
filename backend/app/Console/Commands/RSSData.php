@@ -46,11 +46,25 @@ class RSSData extends Command
                 $noticia->category="kick-boxing";
                 $noticia->title = $entry->title;
                 $noticia->description="";
+                $content = file_get_contents($entry->link);
+                $dom = new \DOMDocument();
+                libxml_use_internal_errors(true);
+                $dom->loadHTML($content);
+                $xpath = new \DomXPath($dom);
+                $nodes = $xpath->query("//div[@class='td-post-content td-pb-padding-side']");
+                foreach ($nodes as $node) {
+                    $childnodes = $node->childNodes;
+                    foreach($childnodes as $child){
+                        if($child->nodeName === 'p'){
+                            $noticia->description .= $child->nodeValue;
+                        };
+                    }
+                }
                 $noticia->url = $entry->link;
                 $noticia->save();
             }
         } catch (\Exception $e) {
-            print_r("Base de datos actualizada");
+            print_r('Base de datos actualizada');
         }
 
         try{
@@ -61,6 +75,15 @@ class RSSData extends Command
                 $noticia->category="boxeo";
                 $noticia->title = $entry->title;
                 $noticia->description="";
+                $content = file_get_contents($entry->link);
+                $dom = new \DOMDocument();
+                libxml_use_internal_errors(true);
+                $dom->loadHTML($content);
+                $xpath = new \DomXPath($dom);
+                $nodes = $xpath->query("//div[@class='post-container cf']");
+                foreach ($nodes as $node) {
+                    $noticia->description.=$node->nodeValue;
+                } 
                 $noticia->url = $entry->link;
                 $noticia->save();
             }
@@ -76,6 +99,15 @@ class RSSData extends Command
                 $noticia->category="karate";
                 $noticia->title = $entry->title;
                 $noticia->description="";
+                $content = file_get_contents($entry->link);
+                $dom = new \DOMDocument();
+                libxml_use_internal_errors(true);
+                $dom->loadHTML($content);
+                $xpath = new \DomXPath($dom);
+                $nodes = $xpath->query("//div[@class='entry-content']");
+                foreach ($nodes as $node) {
+                    $noticia->description.=$node->nodeValue;
+                }
                 $noticia->url = $entry->link;
                 $noticia->save();
             }

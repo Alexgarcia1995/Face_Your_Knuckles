@@ -78,9 +78,7 @@ class UserController extends Controller
 
 
         if ($validator->fails()) {
-
-            return response()->json(['error'=>$validator->errors()], 401);            
-
+            return response()->json(['error'=>$validator->errors()], 401);
         }
 
 
@@ -90,12 +88,9 @@ class UserController extends Controller
 
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')->accessToken;
-        return $success;
         $success['name'] =  $user->name;
         $success['email'] =  $user->email;
-
-        //return response()->json(['success'=>$success], $this->successStatus);
-
+        return $success;
     }
 
 
@@ -123,4 +118,33 @@ class UserController extends Controller
         return User::where('id',$id)->get();
     }
 
+    public function update(Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+
+        $input = $request->all();
+
+        $input['password'] = bcrypt($input['password']);
+
+        $user = User::findOrFail($input['id']);
+
+        $user->name = $input['name'];
+        $user->email = $input['email'];
+        $user->password = $input['password'];
+        $user->save();
+        $success['token'] =  $user->createToken('MyApp')->accessToken;
+        $success['name'] =  $user->name;
+        $success['email'] =  $user->email;
+        $success['id'] =  $user->id;
+        return $success;
+
+    }
 }

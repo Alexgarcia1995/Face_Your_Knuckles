@@ -10,6 +10,8 @@ import Profile from "./Profile";
 import BlogPage from "./BlogPage";
 import NewBlogEntry from "./NewBlogEntry";
 import EntryDetail from './EntryDetail';
+import ModifyUser from './ModifyUser';
+
 
 class Routes extends Component {
   constructor(props) {
@@ -48,6 +50,7 @@ class Routes extends Component {
       <Route path="/blogs/" component={BlogPage} />
       <Route path="/newentry/" component={NewBlogEntry} />
       <Route path="/entry/:id" component={EntryDetail} />
+      <Route path="/modifyuser/" component={ModifyUser} />
       </div>
     )
   }
