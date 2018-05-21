@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import $ from 'jquery';
 import cookie from 'react-cookies';
-
+import { Link } from 'react-router-dom';
 class Profile extends Component {
     constructor() {
       super();
@@ -24,6 +24,7 @@ class Profile extends Component {
         <div className="video-player">
         <h1>{this.state.username}</h1>
         <h1>{this.state.email}</h1>
+        <Link to='/modifyuser/'>Modificar Usuario</Link>
         </div>
         );
         }

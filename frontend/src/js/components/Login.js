@@ -9,6 +9,7 @@ class Login extends Component {
     constructor() {
       super();
       this.state = {
+          error:""
     }
     this.submitForm=this.submitForm.bind(this);
   }  
@@ -27,7 +28,9 @@ class Login extends Component {
         window.location.replace('/');
       })
       .catch(error=> {
-          console.log(error);
+          this.setState({
+              error:"Usuario o contraseña no coinciden"
+          })
       });
   }
 
@@ -42,6 +45,7 @@ class Login extends Component {
                 <input type="email" id="email"/><br/>
                 <label htmlFor="password">Password: </label><br/>
                 <input type="password" id="password" /><br/>
+                <label>{this.state.error}</label><br/>
                 <button type="submit">Login</button>
             </form>
            <p><Link to="/register">Register</Link> </p> 

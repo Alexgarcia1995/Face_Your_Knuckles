@@ -25,6 +25,8 @@ Route::post('login', 'API\UserController@login');
 
 Route::post('register', 'API\UserController@register');
 
+Route::post('update', 'API\UserController@update');
+
 Route::get('/user/{id}', 'API\UserController@get_user');
 
 Route::post('newblog', 'BlogController@store');
