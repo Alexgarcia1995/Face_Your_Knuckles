@@ -83,4 +83,8 @@ class BlogController extends Controller
     public function get_entry($id){
         return Blog::where('id',$id)->get();
     }
+
+    public function filter($category){
+        return Blog::where('category',$category)->get();
+    }
 }

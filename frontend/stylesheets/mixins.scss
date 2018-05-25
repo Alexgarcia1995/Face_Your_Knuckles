@@ -1,0 +1,7 @@
+@mixin navbar_buttons($float,$background,$border,$text-align,$color){
+    float:$float;
+    background:$background;
+    border:$border;
+    text-align: $text-align;
+    color: $color;
+}

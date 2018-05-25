@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'mixins';
+@import 'navbar';
+.main{
+    display: grid;
+}
+
+.formulario{
+    grid-row: 2/4;
+}
+
+.video-player{
+    text-align: center;
+}
+
+.post-container {
+    margin: 20px 20px 0 20px;  
+    overflow: auto;
+    border-bottom: 1px black solid;
+}
+.post-thumb {
+    float: left;
+    margin: 0 0 2em 0 ;
+}
+.post-thumb img {
+    display: block;
+}
+.post-content {
+    margin-left: 10em;
+}
+
+.login-form{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 15px;
+    background: rgb(236, 239, 241) none repeat scroll 0% 0%;
+    border-radius: 5px;
+    color: rgb(17, 34, 51);
+    display: flex;
+    flex-direction: column;
+    min-width: 10em;
+    max-width: 25em;
+    padding: 1.5rem 2rem;
+    margin:auto;
+    margin-top: 5em;
+    text-align: center;
+  }
+
+  .logout{
+    float: right;
+    background: red;
+    border: 3px solid red;
+  }
+
+  .buttonscontainer{
+      padding: 0px !important;
+  }
