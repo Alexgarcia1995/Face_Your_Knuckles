@@ -12,5 +12,5 @@ backend/yarn-error.log
 backend/.env
 
 frontend/node_modules
-
+frontend/stylesheets/.sass-cache
 .vscode/

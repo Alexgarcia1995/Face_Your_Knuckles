@@ -35,6 +35,8 @@ Route::post('newcomment', 'CommentsController@store');
 
 Route::get('blogs', 'BlogController@show');
 
+Route::get('blogs/{category}', 'BlogController@filter');
+
 Route::get('/entry/{id}', 'BlogController@get_entry');
 
 Route::get('/comments/{id}', 'CommentsController@get_entry_comments');

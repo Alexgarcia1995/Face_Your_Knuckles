@@ -14,6 +14,15 @@ class NavigationBar extends Component {
     }
   }
 
+  showNavbarResponsive() {
+    var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
   componentWillMount(){
     if(cookie.load('userData')){
       this.setState({
@@ -74,6 +83,9 @@ render() {
 
   return (
 <div className="topnav" id="myTopnav">
+  <div className="hamburger">
+  <a href="javascript:void(0);" className="icon" onClick={this.showNavbarResponsive}>&#9776;</a>
+  </div>
   <div className="dropdown-noticias"> 
   <span>Noticias</span>
   <div className="dropdown-content">

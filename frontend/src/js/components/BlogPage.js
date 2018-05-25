@@ -9,9 +9,11 @@ class BlogPage extends Component {
     constructor() {
       super();
       this.state = {
+          allblogs:[],
           blogs:[],
       };
       this.componentDidMount=this.componentDidMount.bind(this);
+      this.filter=this.filter.bind(this);
     }
 
     componentDidMount(){
@@ -23,6 +25,7 @@ class BlogPage extends Component {
         }
         axios.get('http://localhost:8000/api/blogs').then((res)=>{
             this.setState({
+                allblogs:res.data,
                 blogs:res.data
             });
         }).catch((err)=>{
@@ -30,6 +33,24 @@ class BlogPage extends Component {
         })
     }
 
+    filter(event){
+        event.preventDefault();
+        let value=event.target.value;
+        if(value===''){
+            this.setState({
+                blogs:this.state.allblogs
+            })
+        }
+        else{
+            axios.get('http://localhost:8000/api/blogs/'+value).then((res)=>{
+                this.setState({
+                    blogs:res.data
+                });
+            }).catch((err)=>{
+                console.log(err);
+            })
+        }
+    }
     
     render() { 
         const Newentrybutton=()=>{
@@ -54,6 +75,13 @@ class BlogPage extends Component {
         <div className="video-player">
         <h1>BlogPage</h1>
         <p>Pagina Del Blog</p>
+        <label htmlFor='filtro'>Filtrar por Categoria</label>
+        <select id="filtro" onChange={this.filter} >
+            <option value="">Categoria</option>
+            <option value="Boxeo">Boxeo</option>
+            <option value="Kick-Boxing">Kick-Boxing</option>
+            <option value="Karate">Karate</option>
+        </select>
         <Newentrybutton />
         {Entries}
         </div>
