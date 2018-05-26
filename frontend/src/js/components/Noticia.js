@@ -27,7 +27,7 @@ class Noticia extends Component {
     
     render() { 
         return (
-        <div className="video-player">
+        <div className="noticia-content">
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
         </div>
