@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import YTSearch from 'youtube-api-search';
 import VideosListItem from "./VideosListItem";
+import banner from '../../../media/images/banner.png';
 
 class Videos extends Component {
   constructor() {
@@ -26,10 +27,13 @@ class Videos extends Component {
 
   render() {
     const VideosList=this.state.videos.map((video)=>{
-      return <VideosListItem id={video.id.videoId} />
-    })      
+      return <VideosListItem key={video.id.videoId} id={video.id.videoId} />
+    })       
     return (
     <div>
+      <picture className='banner'>
+      <img src={banner} alt="Banner"/>
+      </picture>
       {VideosList}
     </div>
     )

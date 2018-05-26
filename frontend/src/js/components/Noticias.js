@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import NoticiasListItem from './NoticiasListItem';
 import axios from 'axios'
+import banner from '../../../media/images/banner.png';
 
 class Noticias extends Component {
   constructor() {
@@ -11,7 +12,7 @@ class Noticias extends Component {
       categoria:window.location.pathname.split("/")[2]
     };
   }
-  componentDidMount(){
+  componentWillMount(){
     let that=this;
     let categoria=this.state.categoria;
     if (categoria==undefined){
@@ -33,6 +34,9 @@ class Noticias extends Component {
     })      
     return (
     <div>
+      <picture className='banner'>
+      <img src={banner} alt="Banner"/>
+      </picture>
       {NoticiasList}
     </div>
     )

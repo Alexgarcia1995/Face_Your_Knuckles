@@ -68,7 +68,7 @@ class EntryDetail extends Component {
             if (this.state.userid!==""){
                 return (
                     <form onSubmit={this.sendComment} >
-                        <textarea id="comment" name="comment"/>
+                        <textarea id="comment" name="comment"/><br/>
                         <button type="submit" >Send Comment</button> 
                     </form>
                 )

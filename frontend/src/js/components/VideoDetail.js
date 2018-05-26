@@ -43,6 +43,7 @@ class VideoDetail extends Component {
       <YouTube
         videoId={this.state.id}
         opts={opts}
+        className='video'
       />
     <p>{this.state.description}</p>
     </div>

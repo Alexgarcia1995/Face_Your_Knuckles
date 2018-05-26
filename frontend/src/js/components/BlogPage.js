@@ -74,7 +74,6 @@ class BlogPage extends Component {
         return (
         <div className="video-player">
         <h1>BlogPage</h1>
-        <p>Pagina Del Blog</p>
         <label htmlFor='filtro'>Filtrar por Categoria</label>
         <select id="filtro" onChange={this.filter} >
             <option value="">Categoria</option>
