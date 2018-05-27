@@ -27,6 +27,11 @@
     @include navbar_buttons($float,inherit,$border_color,left,$navbar_text_color);
     grid-row: 1;
     grid-column: 1;
+    &hover{
+        .dropdown-content {
+            display: block;
+        }
+    }
 }
 
 .blog
@@ -61,6 +66,11 @@
     @include navbar_buttons($float,inherit,$border_color,left,$navbar_text_color);
     grid-row: 1;
     grid-column: 2;
+    &hover{
+        .dropdown-videos-content {
+            display: block;
+        }
+    }
 }
 
 .dropdown-content {
@@ -100,10 +110,6 @@
     }
 }
 
-.dropdown-videos:hover .dropdown-videos-content {
-    display: block;
-}
-
   @media screen and (max-width: 600px) {
     .dropdown-noticias, .dropdown-videos, .blog ,.login,.buttonscontainer {
       display: none;
@@ -111,8 +117,7 @@
     .topnav .hamburger{
       float: left;
       display: block;
-    }
-    .topnav .hamburger a {
+      a {
         text-decoration: none;
         float: left;
         display: block;
@@ -120,58 +125,63 @@
         color: white;
         font-size: 30px;
       }
+    }
   }
   
   @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .hamburger {
-    text-decoration: none;
-      position: relative;
-      left: 0;
-      top: 0;
-    }
-    .topnav.responsive .hamburger a {
-      text-decoration: none;
-      float: left;
-      display: block;
-      text-align: left;
-      color: white;
-      font-size: 30px;
-    }
-    .topnav.responsive .dropdown-noticias{
-        display: block;
-        width: 100%;
-        text-align: left;
-    } 
-    .topnav.responsive .dropdown-noticias a{
-        float: left;
-    } 
-    .topnav.responsive .dropdown-videos{
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-    .topnav.responsive .dropdown-videos a{
-        float: left;
-    }
-    .topnav.responsive .blog{
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-
-    .topnav.responsive .login{
-        display: block;
-        width: 100%;
-    }
-
-    .topnav.responsive .logout{
-        display: block;
-        width: 100%;
-    }
-
-    .topnav.responsive .buttonscontainer{
-        display: block;
-        width: 100%;
+    .topnav.responsive {
+        position: relative;
+        .hamburger {
+            text-decoration: none;
+              position: relative;
+              left: 0;
+              top: 0;
+              a{
+                    text-decoration: none;
+                    float: left;
+                    display: block;
+                    text-align: left;
+                    color: white;
+                    font-size: 30px;
+              }
+        }
+        .dropdown-noticias{
+            display: block;
+            width: 100%;
+            text-align: left;
+            a{
+                float: left;
+    
+            }
+        }
+        .dropdown-videos{
+            display: block;
+            width: 100%;
+            text-align: left;
+            a{
+                float: left;
+    
+            }
+        }
+        .blog{
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+    
+        .login{
+            display: block;
+            width: 100%
+        }
+        .logout{
+            display: block;
+            width: 100%;
+        }
+        .buttonscontainer{
+            display: block;
+            width: 100%;
+        }
+    
+    
     }
 }

@@ -41,7 +41,8 @@ class BlogPage extends Component {
                     <label htmlFor="title">Titulo: </label><br/>
                     <input type="title" id="title"/><br/>
                     <label htmlFor="description">Description: </label><br/>
-                    <textarea type="description" id="description" /><br/>
+                    <textarea type="description" id="description" rows="10" cols="40"/><br/>
+                    <label htmlFor="category">Selecciona una categoria</label><br/>
                     <select required> 
                         <option value="">Select an option...</option>
                         <option value="boxeo">Boxeo</option>
