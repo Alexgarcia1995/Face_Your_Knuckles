@@ -48,7 +48,7 @@ class Login extends Component {
                 <label>{this.state.error}</label><br/>
                 <button type="submit">Login</button>
             </form>
-           <p><Link to="/register">Register</Link> </p> 
+           <p><Link id="register" to="/register">Register</Link> </p> 
         </div>
         <div>
             <p>Or use Social Login</p>

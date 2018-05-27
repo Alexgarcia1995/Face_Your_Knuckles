@@ -9,7 +9,7 @@
     "phpserve": "cd ../backend && php artisan serve &",
     "prestart": "mkdir ./dist && npm run copy|| npm run copy ",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "babel": {
     "presets": [
@@ -28,8 +28,12 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.11",
+    "faker": "^4.1.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.0.0",
+    "jest-cli": "^23.0.0",
+    "puppeteer": "^1.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "style-loader": "^0.21.0",

@@ -18,7 +18,7 @@ class BlogEntry extends Component {
     return( 
       <article className="post-container">
       <div className="post-content">
-      <Link to={link}>{this.state.title}</Link>
+      <Link id={this.state.idEntry} to={link}>{this.state.title}</Link>
       <p>{this.state.description.split('\n')[0]}</p>
       <Link to={link}>Read More</Link>
       </div>

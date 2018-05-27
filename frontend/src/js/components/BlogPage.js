@@ -57,7 +57,7 @@ class BlogPage extends Component {
             if(this.state.user){
                 return(
                     <div> 
-                        <button><Link to="/newentry">New entry</Link></button> 
+                        <button><Link id="newentry" to="/newentry">New entry</Link></button> 
                     </div>
                 )
             }

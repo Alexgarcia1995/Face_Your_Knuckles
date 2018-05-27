@@ -48,10 +48,10 @@ render() {
       return(
         <div className="buttonscontainer">
         <div className="logout"> 
-        <a onClick={this.logout}>Logout</a>
+        <a id="logout" onClick={this.logout}>Logout</a>
         </div>
         <div className="login"> 
-        <Link to="/profile">Profile</Link>
+        <Link id="profile" to="/profile">Profile</Link>
         </div>
         </div>
       )
@@ -59,7 +59,7 @@ render() {
     else{
       return (
         <div className="login"> 
-        <Link to="/login">Login</Link>
+        <Link id='login' to="/login">Login</Link>
         </div>
         )
     }
@@ -99,7 +99,7 @@ render() {
       </div>
   </div>
   <div className="blog"> 
-  <Link to="/blogs">Blog</Link>
+  <Link id='blog' to="/blogs">Blog</Link>
   </div>
   <LoginButtons />
 </div>
