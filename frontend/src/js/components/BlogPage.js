@@ -57,7 +57,7 @@ class BlogPage extends Component {
             if(this.state.user){
                 return(
                     <div> 
-                        <button><Link id="newentry" to="/newentry">New entry</Link></button> 
+                        <button className="new-entry" ><Link id="newentry" to="/newentry">New entry</Link></button> 
                     </div>
                 )
             }
@@ -73,15 +73,17 @@ class BlogPage extends Component {
           });
         return (
         <div className="video-player">
+        <div className="filtros" >
         <h1>BlogPage</h1>
-        <label htmlFor='filtro'>Filtrar por Categoria</label>
-        <select id="filtro" onChange={this.filter} >
+        <label className="filter-label" htmlFor='filtro'>Filtrar por Categoria</label>
+        <select className="filtro" id="filtro" onChange={this.filter} >
             <option value="">Categoria</option>
             <option value="Boxeo">Boxeo</option>
             <option value="Kick-Boxing">Kick-Boxing</option>
             <option value="Karate">Karate</option>
         </select>
         <Newentrybutton />
+        </div>
         {Entries}
         </div>
         );
