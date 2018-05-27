@@ -23,6 +23,8 @@
   color: white;
   grid-row: 1;
   grid-column: 1; }
+  .dropdown-noticiashover .dropdown-content {
+    display: block; }
 
 .blog {
   float: left;
@@ -56,6 +58,8 @@ a:hover {
   color: white;
   grid-row: 1;
   grid-column: 2; }
+  .dropdown-videoshover .dropdown-videos-content {
+    display: block; }
 
 .dropdown-content {
   position: absolute;
@@ -88,9 +92,6 @@ a:hover {
     text-decoration: none;
     display: block; }
 
-.dropdown-videos:hover .dropdown-videos-content {
-  display: block; }
-
 @media screen and (max-width: 600px) {
   .dropdown-noticias, .dropdown-videos, .blog, .login, .buttonscontainer {
     display: none; }
@@ -98,64 +99,53 @@ a:hover {
   .topnav .hamburger {
     float: left;
     display: block; }
-
-  .topnav .hamburger a {
-    text-decoration: none;
-    float: left;
-    display: block;
-    text-align: left;
-    color: white;
-    font-size: 30px; } }
+    .topnav .hamburger a {
+      text-decoration: none;
+      float: left;
+      display: block;
+      text-align: left;
+      color: white;
+      font-size: 30px; } }
 @media screen and (max-width: 600px) {
   .topnav.responsive {
     position: relative; }
-
-  .topnav.responsive .hamburger {
-    text-decoration: none;
-    position: relative;
-    left: 0;
-    top: 0; }
-
-  .topnav.responsive .hamburger a {
-    text-decoration: none;
-    float: left;
-    display: block;
-    text-align: left;
-    color: white;
-    font-size: 30px; }
-
-  .topnav.responsive .dropdown-noticias {
-    display: block;
-    width: 100%;
-    text-align: left; }
-
-  .topnav.responsive .dropdown-noticias a {
-    float: left; }
-
-  .topnav.responsive .dropdown-videos {
-    display: block;
-    width: 100%;
-    text-align: left; }
-
-  .topnav.responsive .dropdown-videos a {
-    float: left; }
-
-  .topnav.responsive .blog {
-    display: block;
-    width: 100%;
-    text-align: left; }
-
-  .topnav.responsive .login {
-    display: block;
-    width: 100%; }
-
-  .topnav.responsive .logout {
-    display: block;
-    width: 100%; }
-
-  .topnav.responsive .buttonscontainer {
-    display: block;
-    width: 100%; } }
+    .topnav.responsive .hamburger {
+      text-decoration: none;
+      position: relative;
+      left: 0;
+      top: 0; }
+      .topnav.responsive .hamburger a {
+        text-decoration: none;
+        float: left;
+        display: block;
+        text-align: left;
+        color: white;
+        font-size: 30px; }
+    .topnav.responsive .dropdown-noticias {
+      display: block;
+      width: 100%;
+      text-align: left; }
+      .topnav.responsive .dropdown-noticias a {
+        float: left; }
+    .topnav.responsive .dropdown-videos {
+      display: block;
+      width: 100%;
+      text-align: left; }
+      .topnav.responsive .dropdown-videos a {
+        float: left; }
+    .topnav.responsive .blog {
+      display: block;
+      width: 100%;
+      text-align: left; }
+    .topnav.responsive .login {
+      display: block;
+      width: 100%; }
+    .topnav.responsive .logout {
+      display: block;
+      width: 100%; }
+    .topnav.responsive .buttonscontainer {
+      display: block;
+      width: 100%; } }
 .main {
   display: grid; }
 
