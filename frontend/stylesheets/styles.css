@@ -23,7 +23,7 @@
   color: white;
   grid-row: 1;
   grid-column: 1; }
-  .dropdown-noticiashover .dropdown-content {
+  .dropdown-noticias:hover .dropdown-content {
     display: block; }
 
 .blog {
@@ -58,7 +58,7 @@ a:hover {
   color: white;
   grid-row: 1;
   grid-column: 2; }
-  .dropdown-videoshover .dropdown-videos-content {
+  .dropdown-videos:hover .dropdown-videos-content {
     display: block; }
 
 .dropdown-content {
@@ -221,5 +221,14 @@ a:hover {
 
 .banner img {
   width: 100%; }
+
+.new-entry {
+  float: right; }
+
+.filtros {
+  margin-bottom: 5em; }
+
+.filtro, .filter-label {
+  float: left; }
 
 /*# sourceMappingURL=styles.css.map */

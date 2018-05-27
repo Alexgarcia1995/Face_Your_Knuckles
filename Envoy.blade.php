@@ -30,3 +30,8 @@ $branch = 'deploy';
     frontend
 @endmacro
 
+@task('test')
+    cd {{ $path }}/frontend
+    npm test
+@endtask
+
