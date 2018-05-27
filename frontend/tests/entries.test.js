@@ -10,7 +10,7 @@ const person = {
     email2: faker.internet.email(),
 };
 
-const appUrlBase = 'http://localhost:8080/'
+const appUrlBase = 'http://54.37.8.167:8080/'
 
 
 beforeAll(async () => {
