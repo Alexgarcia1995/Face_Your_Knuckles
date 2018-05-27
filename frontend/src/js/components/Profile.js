@@ -23,8 +23,8 @@ class Profile extends Component {
         return (
         <div className="video-player">
         <h1>{this.state.username}</h1>
-        <h1>{this.state.email}</h1>
-        <Link to='/modifyuser/'>Modificar Usuario</Link>
+        <h2>{this.state.email}</h2>
+        <Link id="modify" to='/modifyuser/'>Modificar Usuario</Link>
         </div>
         );
         }
